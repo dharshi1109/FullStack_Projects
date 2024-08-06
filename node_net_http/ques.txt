@@ -1,0 +1,2 @@
+1)	Write a Node.js program using the ‘net’ module and implement a simple chat application between the server and client.
+2)	Write a Node.js program using the ‘http’ module and implement a simple server application which receives a message from the client and return back the word and character count on the message received.
