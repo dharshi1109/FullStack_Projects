@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Dropdown menu</title>
+        <style>
+            #dropdowncontent {
+                display: none;
+            }
+            button{
+                font-size: xx-large;
+                position: absolute;
+                top: 300px;
+                left:500px;
+            }
+            a{
+                font-size: larger;
+            }
+            body
+            {
+                background-color: bisque;
+            }
+            
+        td {
+            border: 0.5px solid black; 
+            padding: 8px;
+        }
+        </style>
+        <script>
+            function showDropdown()
+            {
+                var dropdownContent = document.getElementById("dropdowncontent");
+                dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+                dropdownContent.style.position= "absolute";
+                dropdownContent.style.top="350px";
+                dropdownContent.style.left="500px";
+            }
+        </script>
+    </head>
+    <body>
+        <button id="1" onclick="showDropdown()">Click for a drop down menu</button>
+        <div id="dropdowncontent">
+            <table>
+            <tr><td><a href="2_a.html">link 1</a></td></tr>
+            <tr><td><a href="2_b.html">link 2</a></td></tr>
+            <tr><td><a href="2_c.html">link 3</a></td></tr>
+        </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag and Drop List</title>
+<style>
+  .drag-container {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+    width: 200px;
+  }
+
+  .drag-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    padding: 10px;
+    cursor: grab;
+  }
+
+  .drag-over {
+    background-color: #d4d4d4;
+  }
+</style>
+</head>
+<body>
+
+<ul id="drag-list" class="drag-container">
+  <li class="drag-item" draggable="true">Item 1</li>
+  <li class="drag-item" draggable="true">Item 2</li>
+  <li class="drag-item" draggable="true">Item 3</li>
+  <li class="drag-item" draggable="true">Item 4</li>
+  <li class="drag-item" draggable="true">Item 5</li>
+</ul>
+
+<script>
+  const dragList = document.getElementById('drag-list');
+
+  let dragItem = null;
+
+  dragList.addEventListener('dragstart', (event) => {
+    dragItem = event.target;
+    setTimeout(() => {
+      event.target.style.display = 'none';
+    }, 0);
+  });
+
+  dragList.addEventListener('dragend', (event) => {
+    event.target.style.display = '';
+    dragItem = null;
+  });
+
+  dragList.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    const afterElement = getDragAfterElement(dragList, event.clientY);
+    const draggable = document.querySelector('.drag-item');
+    if (afterElement == null) {
+      dragList.appendChild(dragItem);
+    } else {
+      dragList.insertBefore(dragItem, afterElement);
+    }
+  });
+
+  function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll('.drag-item:not(.dragging)')];
+
+    return draggableElements.reduce((closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      } else {
+        return closest;
+      }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+  }
+</script>
+
+</body>
+</html>

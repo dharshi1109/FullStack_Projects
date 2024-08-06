@@ -1,0 +1,21 @@
+
+<html>
+    <head>
+        <title>Pop-up Blocker Test</title>
+        <script>
+            function testPopUpBlocker() {
+                var popUpWindow = window.open('null', '', 'width=100,height=100');
+                if (popUpWindow && !popUpWindow.closed) {
+                    popUpWindow.close();
+                    alert('Pop-up is not blocked!');
+                } else {
+                    alert('Pop-up is blocked!');
+                    window.location.href = 'error.html'; 
+                }
+            }
+        </script>
+    </head>
+<body>
+    <button onclick="testPopUpBlocker()">Test Pop-up Blocker</button>
+</body>
+</html>

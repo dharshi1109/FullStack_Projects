@@ -1,0 +1,6 @@
+1)	Write a Node.js program using the ‘nodemailer’ module and implement a simple mail application
+2)	Write a node.js program for making external http calls.
+3)	Write a program in node.js to parse the given url.
+4)	Write a program to check request header for cookies.
+5)	Write a node.js program to replace two or more a's with the letter b on the given string using Regular Expression.
+6)	Consider a given object in JSON format, write node.js program to print the given object's properties, delete the second property and get length of the object.

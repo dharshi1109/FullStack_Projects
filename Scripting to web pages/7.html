@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<style>
+  .error-message {
+    color: red;
+  }
+</style>
+</head>
+<body>
+
+<form id="myForm" onsubmit="return validateForm()">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br>
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message" required></textarea><br>
+  <button type="submit">Submit</button>
+</form>
+
+<div id="errorMessages" class="error-message"></div>
+
+<script>
+  function validateForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const errorMessages = document.getElementById('errorMessages');
+
+    let isValid = true;
+    errorMessages.innerHTML = '';
+
+    if (name.trim() === '') {
+      errorMessages.innerHTML += 'Name is required.<br>';
+      isValid = false;
+    }
+
+    if (email.trim() === '') {
+      errorMessages.innerHTML += 'Email is required.<br>';
+      isValid = false;
+    }
+
+    if (message.trim() === '') {
+      errorMessages.innerHTML += 'Message is required.<br>';
+      isValid = false;
+    }
+
+    return isValid;
+  }
+</script>
+
+</body>
+</html>

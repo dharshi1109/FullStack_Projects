@@ -1,0 +1,16 @@
+h1{
+    font-family:"Serif";
+    font-size: 50px;
+    font-style:italic;
+
+}
+p{
+    font-family:"Fantasy";
+    font-size: 25px;
+    font-style:italic;
+    text-align:justify;
+    
+}
+body{
+    background-color: rgb(206, 164, 246);
+}

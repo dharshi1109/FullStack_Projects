@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Hex Code's Actual Coloe</title>
+        <style>
+            body{background-color: bisque;}
+            h1,h2{text-align: center;}
+            p{text-align: justify;}
+            h2{color: blue;}
+            table{position: absolute;
+            top: 170px;
+            left: 370px;}
+            td{
+                font-size: large;
+            }
+            
+        </style>
+        <script>
+            function changeColor(cell)
+            {
+                var x=cell.textContent;
+                cell.style.color=x;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Guess the Hex Code's Actual Color</h1>
+        <p>Can you tell a color from its hexadecimal RGB code value? Look at the hex code, guess the color. To see what color it corresponds to, move the mouse over the hex code. Moving the mouse out will display the color name.</p>
+        <h2>Hex Codes</h2>
+        <table>
+            <tr>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#000000</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#0000FF</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#FF00FF</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#808080</td>
+            </tr>
+            <tr>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#008000</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#00FF00</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#800000</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#000080</td>
+            </tr>
+            <tr>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#808000</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#800080</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#FF0000</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#00FFFF</td>                
+            </tr>
+            <tr>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#00FFFF</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#008080</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#FFFF00</td>
+                <td onmouseover="changeColor(this)" onmouseout="this.style.color=''">#FFFFFF</td>
+            </tr>
+        </table>
+    </body>
+</html>
